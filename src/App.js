@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SignIn from "./components/Auth/SignIn";
+import SignUp from "./components/Auth/SignUp";
+import StudentList from "./components/Students/StudentList";
+import StudentForm from "./components/Students/StudentForm";
+import InterviewList from "./components/Interviews/InterviewList";
+import InterviewForm from "./components/Interviews/InterviewForm";
+import Results from "./components/Results/Results";
+import CSVDownload from "./components/CSV/CSVDownload";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/students" element={<StudentList />} />
+        <Route path="/addstudent" element={<StudentForm />} />
+        <Route path="/interviews" element={<InterviewList />} />
+        <Route path="/addinterview" element={<InterviewForm />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/download" element={<CSVDownload />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
