@@ -1,0 +1,27 @@
+.student-list-container {
+  margin: 20px;
+}
+
+.student-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.student-item {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #23527c;
+}

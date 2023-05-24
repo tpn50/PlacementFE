@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./StudentForm.css"; // Import the CSS file
 
 const StudentForm = () => {
   const [student, setStudent] = useState({
@@ -15,6 +17,8 @@ const StudentForm = () => {
     },
   });
   const [success, setSuccess] = useState(null);
+
+  const navigate = useNavigate(); // Added line
 
   const handleChange = (event) => {
     setStudent({
@@ -38,6 +42,9 @@ const StudentForm = () => {
     try {
       await axios.post("http://localhost:8000/home/addstudent", student);
       setSuccess("Student Added Successfully");
+
+      // Navigate back to /students route after successful submission
+      navigate("/students"); // Added line
     } catch (error) {
       console.error("Error submitting form", error);
       setSuccess(null);
@@ -57,7 +64,7 @@ const StudentForm = () => {
   };
 
   return (
-    <div>
+    <div className="student-form-container">
       <h1>Student Form</h1>
       {success && <p>{success}</p>}
       <form onSubmit={handleSubmit}>

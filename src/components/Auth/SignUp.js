@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./SignUp.css"; // Import the CSS file
 
 const SignUp = () => {
   const [signup, setSignup] = useState({
@@ -7,26 +8,21 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
 
   const handleChange = (event) => {
     setSignup({
       ...signup,
       [event.target.name]: event.target.value,
     });
+    console.log(signup);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post("http://localhost:8000/signup", signup);
-      setError(null);
-      setSuccess("User successfully created!");
     } catch (error) {
       console.error("Error submitting form", error);
-      setError("Error creating user");
-      setSuccess(null);
     }
     setSignup({
       name: "",
@@ -36,11 +32,9 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="signup-container">
       <h1>SignUp</h1>
-      {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
-      <form onSubmit={handleSubmit}>
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label>Full Name</label>
         <input
           type="text"

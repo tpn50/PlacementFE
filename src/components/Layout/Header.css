@@ -1,0 +1,22 @@
+/* Header.css */
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #000;
+}

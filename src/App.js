@@ -23,6 +23,7 @@ function App() {
         <Route path="/addinterview" element={<InterviewForm />} />
         <Route path="/results" element={<Results />} />
         <Route path="/download" element={<CSVDownload />} />
+        <Route path="/" element={<SignIn />} />
       </Routes>
       <Footer />
     </Router>

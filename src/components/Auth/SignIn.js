@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./SignIn.css"; // Import the CSS file
 
 const SignIn = () => {
   const [login, setLogin] = useState({
@@ -7,6 +9,8 @@ const SignIn = () => {
     password: "",
   });
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setLogin({
@@ -19,10 +23,11 @@ const SignIn = () => {
     event.preventDefault();
     try {
       await axios.post("http://localhost:8000/signin", login);
-      setError(null); // Reset the error when we successfully log in
+      setError(null);
+      navigate("/interviews");
     } catch (error) {
       console.error("Error submitting form", error);
-      setError(error.response.data.message); // Set the error state to the message returned from the server
+      setError(error.response.data.message);
     }
     setLogin({
       email: "",
@@ -31,11 +36,11 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <div className="signin-container">
       <h1>Login</h1>
-      {error && <p>{error}</p>} {/* Render the error message if it exists */}
+      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>E-mail</label>
+        <label>Email</label>
         <input
           type="email"
           name="email"
@@ -49,7 +54,7 @@ const SignIn = () => {
           value={login.password}
           onChange={handleChange}
         />
-        <button>SignIn</button>
+        <button className="signin-btn">Sign In</button>
       </form>
     </div>
   );
