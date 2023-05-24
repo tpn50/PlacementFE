@@ -1,51 +1,86 @@
-/* Results.css */
-
-.results-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.results-list {
-  width: 500px;
+.results {
   padding: 20px;
   background-color: #f0f0f0;
-  border-radius: 5px;
 }
 
-.results-list h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.results-list h3 {
+.results__title {
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-.results-list p {
+.results__interview {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.results__company {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.results__date {
+  font-size: 14px;
+  color: #666;
+}
+
+.results__eligible-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.results__students {
+  list-style-type: none;
   margin: 0;
-}
-
-.results-list ul {
-  list-style: none;
   padding: 0;
-  margin-bottom: 20px;
 }
 
-.results-list li {
+.results__student {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.results__no-students {
+  font-size: 14px;
+  color: #666;
+}
+
+.results__action-title {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
-.results-list button {
+.results__form {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.results__select {
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.results__button-group {
+  display: flex;
+}
+
+.results__button {
+  padding: 5px 10px;
+  margin-right: 10px;
   background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-.results-list button:hover {
-  background-color: #0056b3;
+.results__download {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }

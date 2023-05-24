@@ -15,13 +15,15 @@ const Header = () => {
     location.pathname !== "/signin";
 
   return (
-    <header>
-      <nav>
+    <header className="header">
+      <h1 className="header__logo">Placement Portal</h1>
+      <nav className="header__nav">
         {shouldShowSignUpLink && <Link to="/signup">Sign Up</Link>}
         {shouldShowSignInLink && <Link to="/signin">Sign In</Link>}
         {shouldShowInterviewsLink && <Link to="/interviews">Interviews</Link>}
         {shouldShowInterviewsLink && <Link to="/students">Students</Link>}
         {shouldShowInterviewsLink && <Link to="/results">Results</Link>}
+        {shouldShowInterviewsLink && <Link to="/">Logout</Link>}
       </nav>
     </header>
   );

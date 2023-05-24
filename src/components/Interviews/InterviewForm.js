@@ -23,7 +23,10 @@ const InterviewForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8000/home/addinterview", interview);
+      await axios.post(
+        "https://placementbackend.onrender.com/home/addinterview",
+        interview
+      );
       setError(null);
       setSuccess("Interview successfully created!");
       setInterview({

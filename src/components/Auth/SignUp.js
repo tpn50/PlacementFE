@@ -20,7 +20,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8000/signup", signup);
+      await axios.post("https://placementbackend.onrender.com/signup", signup);
     } catch (error) {
       console.error("Error submitting form", error);
     }

@@ -40,7 +40,10 @@ const StudentForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8000/home/addstudent", student);
+      await axios.post(
+        "https://placementbackend.onrender.com/home/addstudent",
+        student
+      );
       setSuccess("Student Added Successfully");
 
       // Navigate back to /students route after successful submission

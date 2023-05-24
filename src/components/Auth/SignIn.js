@@ -22,7 +22,7 @@ const SignIn = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8000/signin", login);
+      await axios.post("https://placementbackend.onrender.com/signin", login);
       setError(null);
       navigate("/interviews");
     } catch (error) {

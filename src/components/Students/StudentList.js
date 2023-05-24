@@ -12,7 +12,9 @@ const StudentList = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/home/students");
+      const response = await axios.get(
+        "https://placementbackend.onrender.com/home/students"
+      );
       setStudents(response.data.students);
     } catch (error) {
       console.log(error);
